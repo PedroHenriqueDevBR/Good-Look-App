@@ -13,7 +13,7 @@ class SQFLite {
   static final clientDB =
       "CREATE TABLE client (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, phone TEXT, email TEXT, address TEXT, observations TEXT, user int, FOREIGN KEY(user) REFERENCES user(id));";
   static final serviceDB =
-      "CREATE TABLE service (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, description TEXT, total_cost REAL, price REAL);";
+      "CREATE TABLE service (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, description TEXT, total_cost REAL, price REAL, user int, FOREIGN KEY(user) REFERENCES user(id));";
   static final registerDB =
       "CREATE TABLE register (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, created_at TEXT NOT NULL, service_date TEXT, hour_service TEXT, description TEXT, done BLOB, amount_paid REAL, client int, user int, FOREIGN KEY(client) REFERENCES client(id), FOREIGN KEY(user) REFERENCES user(id));";
   static final registerServiceDB =
