@@ -159,8 +159,8 @@ delete from client where id = 2;
 */
 
 -- Cadastrar novo servico
-insert into service (name, description, total_cost, price)
-values ('', '', 0, 0);
+insert into service (name, description, total_cost, price, user) values 
+('', '', 0, 0, 0);
 
 -- Alterar os dados de um servico pelo id
 update service set 
