@@ -17,7 +17,7 @@ class ServiceController {
   getAllServices(userId) async {
     Database db = await getDatasabe();
     String sql =
-        'select s.* from service s inner join user u on s.user = u.id where u.id = $userId;';
+        "select s.* from service s inner join user u on s.user = u.id where u.id = $userId;";
     List<Map> services = await db.rawQuery(sql);
 
     db.close();
@@ -26,8 +26,7 @@ class ServiceController {
 
   getService(serviceId) async {
     Database db = await getDatasabe();
-    String sql =
-        'select s.* from service s inner join user u on s.user = u.id where s.id = $serviceId;';
+    String sql = 'select * from service where id = $serviceId;';
     List<Map> service = await db.rawQuery(sql);
     db.close();
     return service;

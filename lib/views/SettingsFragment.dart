@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:good_look_app/views/ListDemandActivity.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'ListClientActivity.dart';
 import 'ListServiceActivity.dart';
@@ -15,10 +16,6 @@ class _SettingsFragmentState extends State<SettingsFragment> {
   @override
   Widget build(BuildContext context) {
     List<ConfigurationItem> data = <ConfigurationItem>[
-      ConfigurationItem('Usuários', () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => ListServiceActivity()));
-      }, Icons.person_outline),
       ConfigurationItem('Serviços', () {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => ListServiceActivity()));
@@ -27,14 +24,15 @@ class _SettingsFragmentState extends State<SettingsFragment> {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => ListClientActivity()));
       }, Icons.people_outline),
-      ConfigurationItem('Ajudantes', () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => ListEmlpoyeeActivity()));
-      }, Icons.hourglass_empty),
       ConfigurationItem('Pedidos', () {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => ListDemandActivity()));
       }, Icons.poll),
+      ConfigurationItem('Encerrar sessão', () async {
+        final prefs = await SharedPreferences.getInstance();
+        prefs.remove('userId');
+        Navigator.pop(context);
+      }, Icons.exit_to_app),
     ];
 
     return ListView.builder(

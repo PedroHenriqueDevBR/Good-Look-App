@@ -159,7 +159,6 @@ class _ListClientActivityState extends State<ListClientActivity> {
 
   Widget fab() {
     return FloatingActionButton.extended(
-      backgroundColor: Colors.purple,
       label: Text('Cadastrar'),
       icon: Icon(Icons.add),
       onPressed: () {
