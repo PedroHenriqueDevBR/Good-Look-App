@@ -4,114 +4,168 @@ Aplicativo desenvolvido para facilitar a o gerenciamento de serviços prestados 
 
 ## Novas funcionalidades
 
+0. Banco de dados
+   1. Criação do banco de dados utilizando SQLite
+      ```SQL
+      CREATE TABLE `customer` (
+         `id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+         `name`	TEXT NOT NULL,
+         `phone`	TEXT,
+         `email`	TEXT,
+         `home_address`	TEXT,
+         `observations`	TEXT
+      );
+
+      CREATE TABLE `service` (
+         `id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+         `name`	TEXT NOT NULL,
+         `description`	TEXT,
+         `cost`	REAL NOT NULL
+      );
+
+      CREATE TABLE `record` (
+         `id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+         `create_at`	TEXT NOT NULL,
+         `service_date`	TEXT NOT NULL,
+         `service_hour`	TEXT NOT NULL,
+         `description`	TEXT,
+         `done`	INTEGER NOT NULL DEFAULT 0,
+         `customer`	INTEGER NOT NULL,
+      FOREIGN KEY(`customer`) REFERENCES `Customer`(`id`)
+      );
+
+      CREATE TABLE `service_offered` (
+         `id`	INTEGER PRIMARY KEY AUTOINCREMENT,
+         `amount_paid`	REAL NOT NULL,
+         `record`	INTEGER NOT NULL,
+         `service`	INTEGER NOT NULL,
+         FOREIGN KEY(`record`) REFERENCES `record`(`id`),
+         FOREIGN KEY(`service`) REFERENCES `service`(`id`)
+      );
+      ```
+
 1. Cliente
    1. Registrar cliente (Fidelização)
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
-   2. Atualizar dado do cliente
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
+      ```sql
+      insert into Customer (name, phone, email, home_address, observations)
+      values ('Cliente 01', '86912345678', '', '', '');
+      ```
+   2. Atualizar dados do cliente
+      ```sql
+      update Customer 
+      set name = 'Cliente 01',
+            phone = '',
+            email = '',
+            home_address = '',
+            observations = ''
+      where id = 2;
+      ```
    3. Deletar cliente
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
-   4. Seelcionar o cliente que possui a maior número de registros
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
-   5. Selecionar o cliente que mais gasta
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
-   6. Selecionar o cliente que gasta mais em um único atendimento
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
+      ```sql
+      delete from Customer where id = 3;
+      ```
+   4. Selecionar todos os clientes por ordem de nome
+      ```sql
+      select * from Customer order by name;
+      ```
+   5. Seelcionar o cliente que possui a maior número de registros
+      ```sql
+      select *, count(customer) as record_count from customer c inner  join record r
+      on c.id = r.customer group by customer order by record_count desc;
+      ```
+   6. Selecionar o cliente que mais gasta
    7. Selecionar cliente por busca
+      ```sql
+      select * from customer where name like 'c%';
+      ```
 2. Serviço
    1. Registrar Serviço
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
+      ```sql
+      insert into service (name, description, cost)
+      values ('Barba', 'Descrição qualquer', 5.00);
+      ```
    2. Atualizar serviço
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
+      ```sql
+      update service 
+      set name = 'Fazer barba',
+            description = 'Barba masculina',
+            cost = 6.0
+      where id = 1;
+      ```
    3. Deletar serviço
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
-   4. Selecionar todo os serviços
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
+      ```sql
+      delete from service where id = 2;
+      ```
+   4. Selecionar todo os serviços por nome
+      ```sql
+      select * from service order by name;
+      ```
    5. Selecionar serviço com base na busca
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
    6. Selecionar o serviço mais caro e o mais barato
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
    7. Selecionar o serviço mais vendido
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
    8. Selecionar o cliente mais fiel de um serviço
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
 3. Registro
    1. Iniciar registro (Agendamento ou criação de um serviço para um cliente)
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
+      ```sql
+      insert into record (create_at, service_date, service_hour, description, done, customer)
+      values ('now', 'today', 'now', 'Nothing', 0, 1);
+      ```
    2. atualizar registro
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
+      ```sql
+      update record 
+      set create_at = 'now',
+            service_date = 'tomorow', 
+            service_hour = '', 
+            description = ''
+      where id = 1;
+      ```
    3. Deletar registro
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
+      ```sql
+      delete from record where id = 2;
+      ```
    4. Concluir serviço
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
+      ```sql
+      update record 
+      set done = 1
+      where id = 1;
+      ```
    5. Selecionar todos os registros
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
+      ```sql
+      select * from record order by service_date desc;
+      ```
    6. Selecionar todos os registros de acordo com a data
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
+      ```sql
+      abc
+      ```
    7. adicionar serviço ao registro
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
+      ```sql
+      insert into service_offered(amount_paid, record, service)
+      values (10.0,  1, 1);
+      ```
    8. Calcular o total do registro baseado nos serviços registrados
-      - [ ] SQL implementado
-      - [ ] Funcionalidade implementada
-   9.  Selecionar o registro mais caro ou mais barato
-       - [ ] SQL implementado
-       - [ ] Funcionalidade implementada
-   10. Selecionar o registro com o maior número de serviços
-       - [ ] SQL implementado
-       - [ ] Funcionalidade implementada
-
-## Funcionalidades Antigas
-
-1. Gerenciamento de usuários para acesso ao aplicativo
-   1. Cadastro de usuários
-   2. Alteração de dados cadastrais
-   3. Login na alpicação
-   4. Logout da aplicação
-   5. Criação de usuário administrador
-      1. Edição de dados de usuários não administradores
-      2. Exclusão de perfis de usuários não administradores
-2. Gerenciamento de serviços prestados pelo perfil logado
-   1. Cadastro de serviços
-   2. Edição de serviços
-   3. Exclusão de registros
-3. Gerenciamento de clientes
-   1. Cadastro de clientes
-   2. Edição de clientes
-   3. Exclusão de clientes
-4. Registros de serviços prestados para clientes
-   1. Criação de ordem de serviço
-   2. Vinculo de serviços à ordem selecionada
-   3. Edição da ordem de serviço
-   4. Exclusão da ordem de serviço
-5. Geração de relatórios
-   1. Perfil que mais atendeu ordem de serviços
-   2. Serviço mais executado do perfil logado
-   3. Lista de todos os serviços prestados
-   4. Lista dos serviços mais caros
-   5. Serviços que mais geraram lucro para o perfil
-6. Exportação de relatórios.
-   1. Exportar para a memória interna do dispositivo
+      ```sql
+      select r.*, sum(so.amount_paid) as total from record as r inner join service_offered as so
+      on r.id = so.record inner join service as s
+      on so.service = s.id;
+      ```
+   9. Selecionar todos os registros com os serviços
+      ```sql
+      select so.id, so.amount_paid, r.*, s.* from record as r inner join service_offered as so
+      on r.id = so.record inner join service as s
+      on so.service = s.id;
+      ```
+   10. remover serviço do registro
+      ```sql
+      delete from service_offered where id = 2;
+      ```
+   11. Atualizar o valor recebido no serviço
+      ```sql
+      update service_offered
+      set amount_paid = 6.0
+      where id = 1;
+      ```
+   12. Selecionar o registro mais caro ou mais barato
+   13. Selecionar o registro com o maior número de serviços
 
 ## DESENVOLVIMENTO
 
