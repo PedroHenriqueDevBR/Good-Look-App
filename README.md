@@ -2,6 +2,37 @@
 
 Aplicativo desenvolvido para facilitar a o gerenciamento de serviços prestados por profissionais da área da estética. Disponibilizando uma forma simples de registrar todos os serviços prestados e ter um controle consistente sobre os dados de clientes e serviços prestados.
 
+## Novas funcionalidades
+
+1. Cliente
+   1. Registrar cliente (Fidelização)
+   2. Atualizar dado do cliente
+   3. Deletar cliente
+   4. Seelcionar o cliente que possui a maior número de registros
+   5. Selecionar o cliente que mais gasta
+   6. Selecionar o cliente que gasta mais em um único atendimento
+   7. Selecionar cliente por busca
+2. Serviço
+   1. Registrar Serviço
+   2. Atualizar serviço
+   3. Deletar serviço
+   4. Selecionar todo os serviços
+   5. Selecionar serviço com base na busca
+   6. Selecionar o serviço mais caro e o mais barato
+   7. Selecionar o serviço mais vendido
+   8. Selecionar o cliente mais fiel de um serviço
+3. Registro
+   1. Iniciar registro (Agendamento ou criação de um serviço para um cliente)
+   2. atualizar registro
+   3. Deletar registro
+   4. Concluir serviço
+   5. Selecionar todos os registros
+   6. Selecionar todos os registros de acordo com a data
+   7. adicionar serviço ao registro
+   8. Calcular o total do registro baseado nos serviços registrados
+   9. Selecionar o registro mais caro ou mais barato
+   10. Selecionar o registro com o maior número de serviços
+
 ## Funcionalidades
 
 1. Gerenciamento de usuários para acesso ao aplicativo
