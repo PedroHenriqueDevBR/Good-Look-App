@@ -6,34 +6,82 @@ Aplicativo desenvolvido para facilitar a o gerenciamento de serviços prestados 
 
 1. Cliente
    1. Registrar cliente (Fidelização)
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    2. Atualizar dado do cliente
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    3. Deletar cliente
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    4. Seelcionar o cliente que possui a maior número de registros
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    5. Selecionar o cliente que mais gasta
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    6. Selecionar o cliente que gasta mais em um único atendimento
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    7. Selecionar cliente por busca
 2. Serviço
    1. Registrar Serviço
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    2. Atualizar serviço
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    3. Deletar serviço
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    4. Selecionar todo os serviços
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    5. Selecionar serviço com base na busca
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    6. Selecionar o serviço mais caro e o mais barato
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    7. Selecionar o serviço mais vendido
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    8. Selecionar o cliente mais fiel de um serviço
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
 3. Registro
    1. Iniciar registro (Agendamento ou criação de um serviço para um cliente)
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    2. atualizar registro
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    3. Deletar registro
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    4. Concluir serviço
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    5. Selecionar todos os registros
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    6. Selecionar todos os registros de acordo com a data
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    7. adicionar serviço ao registro
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
    8. Calcular o total do registro baseado nos serviços registrados
-   9. Selecionar o registro mais caro ou mais barato
+      - [ ] SQL implementado
+      - [ ] Funcionalidade implementada
+   9.  Selecionar o registro mais caro ou mais barato
+       - [ ] SQL implementado
+       - [ ] Funcionalidade implementada
    10. Selecionar o registro com o maior número de serviços
+       - [ ] SQL implementado
+       - [ ] Funcionalidade implementada
 
-## Funcionalidades
+## Funcionalidades Antigas
 
 1. Gerenciamento de usuários para acesso ao aplicativo
    1. Cadastro de usuários
