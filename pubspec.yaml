@@ -1,18 +1,21 @@
 name: good_look_app
 description: Aplicativo para gerenciamento de salao e afins.
 
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^0.1.2
-  sqflite: ^1.2.2
-  shared_preferences: ^0.5.6+3
+  cupertino_icons: ^1.0.3
+  sqflite: ^2.0.0+3
+  shared_preferences: ^2.0.6
+  rx_notifier: ^1.1.0
 
 dev_dependencies:
   flutter_test:
